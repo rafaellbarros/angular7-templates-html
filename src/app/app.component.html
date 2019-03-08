@@ -1,8 +1,15 @@
+<ng-container *ngTemplateOutlet="logo"></ng-container>
+<p>
+  <ng-container *ngTemplateOutlet="flagLogo? logo:logoSmall"></ng-container>
+</p>
 <employee-list></employee-list>
-<!--
-<ng-content-teste>
-  <modal>Modal</modal>
-  <div>Meu texto!</div>
-  <span modal>Never ends</span>
-</ng-content-teste>
--->
+<ng-container *ngTemplateOutlet="logo"></ng-container>
+
+<ng-template #logo>
+  <img class="logo-top" src="./assets/logo-top.png" alt="">
+</ng-template>
+
+
+<ng-template #logoSmall>
+  <img class="logo-top-small" src="./assets/logo-top.png" alt="">
+</ng-template>
