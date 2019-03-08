@@ -51,3 +51,23 @@
   #employeeNewModal></employee-new-modal>
 <employee-edit-modal [employee]="employeeToEdit" (onSubmit)="onEditEmployee($event)"></employee-edit-modal>
 <employee-delete-modal [employee]="employeeToDelete" (onDestroy)="onDestroyEmployee($event)"></employee-delete-modal>
+
+<template id="template">
+  Qualquer coisa
+</template>
+<!--
+  template = docuement.querySelector('#template')
+  elem.appendChild(template.content.cloneNode(true))
+-->
+
+<ng-template #myTemplate>
+  <p>Meu Template</p>
+  <ng-container>
+      <p>Meu Container</p>
+  </ng-container>
+</ng-template>
+
+<ng-container>
+    <p>Meu Container</p>
+</ng-container>
+
