@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Employee } from 'src/app/models/employees';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Modalable } from '../../modal';
@@ -17,6 +17,8 @@ export class EmployeeNewModalComponent extends Modalable implements OnInit {
     salary:  0,
     bonus: 0,
   };
+  @ViewChild('inputName')
+  inputName: ElementRef;
 
   @Output()
   onSubmit: EventEmitter<Employee> = new EventEmitter<Employee>();
@@ -27,6 +29,10 @@ export class EmployeeNewModalComponent extends Modalable implements OnInit {
 
   ngOnInit() {
     super.ngOnInit();
+    this.onShow.subscribe(() => {
+      console.log('inputName > ', this.inputName);
+      this.inputName.nativeElement.focus();
+    })
   }
 
   addEmployee(event) {

@@ -21,7 +21,7 @@ export class EmployeeListComponent implements OnInit {
 
   showMessageSuccess = false;
 
-  @ViewChild(EmployeeNewModalComponent) // pegar uma referencia de um elemento
+  @ViewChild('employeeNewModal') // pegar uma referencia de um elemento
   employeeNewModal: EmployeeNewModalComponent;
 
   @ViewChild(EmployeeEditModalComponent) // pegar uma referencia de um elemento
