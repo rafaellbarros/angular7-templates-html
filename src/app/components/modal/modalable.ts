@@ -4,7 +4,7 @@ import { ModalComponent } from './modal.component';
 export class Modalable implements OnInit{
 
   @ViewChild(ModalComponent)
-  modalComponent: ModalComponent;
+  public modalComponent: ModalComponent;
 
   @Output()
   onHide: EventEmitter<any> = new EventEmitter();

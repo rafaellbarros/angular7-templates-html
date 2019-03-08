@@ -15,6 +15,7 @@ import { EmployeeDeleteModalComponent } from './components/employee/employee-del
 import { ComponenteInlineComponent } from './components/componente-inline/componente-inline.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NgContentTesteComponent } from './components/ng-content-teste/ng-content-teste.component';
+import { EmployeeDetailModalComponent } from './components/employee/employee-detail-modal/employee-detail-modal.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { NgContentTesteComponent } from './components/ng-content-teste/ng-conten
     MyCurrencyPipe,
     ComponenteInlineComponent,
     ModalComponent,
-    NgContentTesteComponent
+    NgContentTesteComponent,
+    EmployeeDetailModalComponent
   ],
   imports: [
     BrowserModule,

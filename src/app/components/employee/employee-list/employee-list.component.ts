@@ -1,3 +1,4 @@
+import { EmployeeDetailModalComponent } from './../employee-detail-modal/employee-detail-modal.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { Employee } from 'src/app/models/employees';
@@ -17,9 +18,13 @@ export class EmployeeListComponent implements OnInit {
   employee: Employee;
   employeeToEdit: Employee;
   employeeToDelete: Employee;
+  employeeToDetail: Employee;
   data = new Date();
 
   showMessageSuccess = false;
+
+  @ViewChild(EmployeeDetailModalComponent) // pegar uma referencia de um elemento
+  employeeDetailModal: EmployeeDetailModalComponent;
 
   @ViewChild('employeeNewModal') // pegar uma referencia de um elemento
   employeeNewModal: EmployeeNewModalComponent;
@@ -34,6 +39,11 @@ export class EmployeeListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  openDetailModal(employee: Employee) {
+    this.employeeToDetail = employee;
+    this.employeeDetailModal.show();
   }
 
   openNewModal() {
